@@ -29,10 +29,10 @@
   .pagination {
     @apply flex justify-center gap-4;
     .action {
-      @apply rounded-md bg-slate-100 p-2 font-medium text-slate-700 shadow-md hover:bg-slate-200 disabled:text-slate-400 hover:disabled:bg-slate-100;
+      @apply rounded-full bg-slate-100 p-2 font-medium text-slate-700 shadow-md hover:bg-slate-200 disabled:text-slate-400 hover:disabled:bg-slate-100;
     }
     .page {
-      @apply rounded-md bg-slate-100 p-2 font-medium text-slate-700 shadow-md hover:bg-slate-200;
+      @apply rounded-full bg-slate-100 p-2 font-medium text-slate-700 shadow-md hover:bg-slate-200;
       &.active {
         @apply bg-yellow-700 text-slate-100 hover:bg-yellow-600;
       }
