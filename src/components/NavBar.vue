@@ -1,5 +1,8 @@
 <script setup>
-    import { ref } from 'vue'
+import { ref } from 'vue'
+import { useAuth } from '@/components/useAuth'
+
+const auth = (useAuth)
     const brand = ref(' EJV.co Employee Directory ')
 </script>
 
@@ -10,9 +13,14 @@
                 <span class="brand-title">{{ brand }}</span>
             </RouterLink>
             <div clase="menu">
-                <a href="#" class="menu-item">Departments</a>
-                <a href="#" class="menu-item">Settings</a>
-                <a href="#" class="menu-login">Logout</a>            
+                <RouterLink to="{name:'Home'}" href="#" class="menu-item">Departments</RouterLink>
+                <div v-if="auth.isAuthenticated">
+                    <RouterLink to="{name:'Login'}" href="#" class="menu-item">Settings</RouterLink>
+                    <RouterLink to="{name:'Home'}" href="#" class="menu-login">Login</RouterLink>   
+                </div>  
+                <div v-else> 
+                    <RouterLink to="{name:'Home'}" href="#" class="menu-login">Logout</RouterLink>        
+                </div>
             </div>
         </div>
     </nav>
@@ -30,11 +38,17 @@
             }
             .menu {
                 @apply flex gap-2;
+                div {
+                    @apply py-2
+                }
                 &-item{
                     @apply rounded-md px-4 py-2 hover:bg-yellow-500 hover:text-slate-900;
                 }
                 &-login{
-                    @apply border-2 rounded-md bg-purple-900 px-4 py-2 text-red-100 hover:bg-red-700 hover:text-slate-900
+                    @apply border-2 rounded-md bg-green-900 px-4 py-2 text-red-100 hover:bg-red-900 hover:text-slate-900
+                }
+                &-logout{
+                    @apply mx-2 border-2 rounded-md bg-red-500 px-4 py-2 text-red-100 hover:bg-red-900 hover:text-slate-900
                 }
             }
         }
