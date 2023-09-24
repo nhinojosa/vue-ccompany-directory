@@ -26,10 +26,10 @@ const selectCard = () => {
 
 <style scoped lang="postcss">
 .card {
-    @apply border-2 border-p7 cursor-pointer overflow-hidden rounded-md bg-p2 p-8 shadow-md transition-transform duration-300 hover:scale-125 hover:shadow-slate-800 hover:shadow-2xl;
+    @apply border-2 border-purple-700 cursor-pointer overflow-hidden rounded-md bg-purple-200 p-8 shadow-md transition-transform duration-300 hover:scale-125 hover:shadow-slate-800 hover:shadow-2xl;
     &-image {
         img{
-            @apply border-4 border-p7 mx-auto rounded-xl object-contain
+            @apply border-4 border-purple-700 mx-auto rounded-xl object-contain
         }
     }
     &-details {

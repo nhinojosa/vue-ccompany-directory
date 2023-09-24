@@ -22,7 +22,7 @@
     .wrapper {
         @apply flex w-full items-stretch;
         .search{
-            @apply rounded-md border-2 border-p7 px-6 py-4 text-slate-700 placeholder-slate-400 outline-none focus:ring-yellow-500;
+            @apply rounded-md border-2 border-purple-700 px-6 py-4 text-slate-700 placeholder-slate-400 outline-none focus:ring-yellow-500;
         }
         .icon {
             @apply absolute right-0 z-10 py-4 pr-8 text-slate-400;

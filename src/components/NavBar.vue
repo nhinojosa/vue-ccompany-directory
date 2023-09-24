@@ -34,7 +34,7 @@
 
 <style scoped lang="postcss">
     nav {
-        @apply h-20 flex bg-p1 text-slate-200;
+        @apply h-20 flex bg-purple-700 text-slate-200;
         .wrapper {
             @apply container mx-auto flex w-full items-center justify-between;
             .brand {
