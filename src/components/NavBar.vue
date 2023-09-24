@@ -1,9 +1,10 @@
 <script setup>
-import { ref } from 'vue'
-import { useAuth } from '@/components/useAuth'
+  import { ref } from 'vue'
+  import { useAuth } from '@/composables/useAuth'
 
-const auth = (useAuth)
-    const brand = ref(' EJV.co Employee Directory ')
+  const { isAuthenticated, logout, user } = useAuth()
+
+  const brand = ref(' EJV.co Employee Directory ')
 </script>
 
 <template>

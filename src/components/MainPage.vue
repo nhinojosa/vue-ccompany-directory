@@ -10,7 +10,6 @@ import MainPagination from '@/components/MainPagination.vue'
         <MainSearch />
         <MainCards />
         <MainPagination />
-
     </div>
 </template>
 
