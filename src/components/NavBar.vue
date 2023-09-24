@@ -7,23 +7,28 @@ const auth = (useAuth)
 </script>
 
 <template>
-    <nav>
-        <div class="wrapper">
-            <RouterLink to="{name:'Home'}" class="brand">
-                <span class="brand-title">{{ brand }}</span>
-            </RouterLink>
-            <div clase="menu">
-                <RouterLink to="{name:'Home'}" href="#" class="menu-item">Departments</RouterLink>
-                <div v-if="auth.isAuthenticated">
-                    <RouterLink to="{name:'Login'}" href="#" class="menu-item">Settings</RouterLink>
-                    <RouterLink to="{name:'Home'}" href="#" class="menu-login">Login</RouterLink>   
-                </div>  
-                <div v-else> 
-                    <RouterLink to="{name:'Home'}" href="#" class="menu-login">Logout</RouterLink>        
-                </div>
-            </div>
+  <nav>
+    <div class="wrapper">
+      <RouterLink :to="{ name: 'Home' }" class="brand">
+        <span class="brand-title">{{ brand }}</span>
+      </RouterLink>
+      <div class="menu">
+        <p v-show="isAuthenticated" class="px-2 py-4">
+          Welcome back
+          <strong>
+            <i>{{ user?.email }}</i>
+          </strong>
+        </p>
+        <div v-if="isAuthenticated">
+          <RouterLink :to="{ name: 'Settings' }" href="#" class="menu-item">Settings</RouterLink>
+          <button class="menu-logout" @click="logout">Logout</button>
         </div>
-    </nav>
+        <div v-else>
+          <RouterLink :to="{ name: 'Login' }" href="#" class="menu-login">Login</RouterLink>
+        </div>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <style scoped lang="postcss">
