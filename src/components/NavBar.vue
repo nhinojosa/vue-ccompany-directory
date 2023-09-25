@@ -21,11 +21,11 @@
           </strong>
         </p>
         <div v-if="isAuthenticated">
-          <RouterLink :to="{ name: 'Settings' }" href="#" class="menu-item">Settings</RouterLink>
+          <RouterLink :to="{ name: 'Settings' }" class="menu-item">Settings</RouterLink>
           <button class="menu-logout" @click="logout">Logout</button>
         </div>
         <div v-else>
-          <RouterLink :to="{ name: 'Login' }" href="#" class="menu-login">Login</RouterLink>
+          <RouterLink :to="{ name: 'Login' }" class="menu-login">Login</RouterLink>
         </div>
       </div>
     </div>
